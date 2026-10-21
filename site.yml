@@ -1,0 +1,5 @@
+---
+- hosts: garderie_vm
+  become: yes
+  roles:
+    - docker
