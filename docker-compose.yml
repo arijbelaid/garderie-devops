@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: garderie-backend
+    ports:
+      - "5000:5000"
+    networks:
+      - garderie-net
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: garderie-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      # On utilise le nom du service "backend" car Docker crée un DNS interne
+      - NEXT_PUBLIC_BACKEND_URL=http://backend:5000 
+    depends_on:
+      - backend
+    networks:
+      - garderie-net
+    restart: always
+
+networks:
+  garderie-net:
+    driver: bridge
