@@ -4,8 +4,8 @@ pipeline {
     environment {
         // ⚠️ REMPLACEZ PAR VOTRE NOM D'UTILISATEUR DOCKER HUB
         DOCKER_HUB_USER = 'arijbelaid' 
-        FRONTEND_IMAGE = "${DOCKER_HUB_USER}/garderie-frontend:latest"
-        BACKEND_IMAGE = "${DOCKER_HUB_USER}/garderie-backend:latest"
+        FRONTEND_IMAGE = "arijbelaid/garderie-frontend:latest"
+        BACKEND_IMAGE = "arijbelaid/garderie-backend:latest"
     }
 
     stages {
